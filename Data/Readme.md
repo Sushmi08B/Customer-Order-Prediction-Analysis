@@ -24,20 +24,23 @@ The raw files are too large to upload to GitHub, but you can download them yours
 
 After download, place files under the following paths in your **Azure Data Lake (ADLS Gen2)** or local project structure:
 
+---
+```text
 data/
 ├── raw/
-│ └── online_retail_ii/
-│ └── landing_date=YYYY-MM-DD/
-│ ├── orders.csv
-│ ├── aisles.csv
-│ ├── departments.csv
-│ ├── order_products__prior.csv
-│ ├── order_products__train.csv
-│ └── products.csv
+│   └── online_retail_ii/
+│       └── landing_date=YYYY-MM-DD/
+│           ├── orders.csv
+│           ├── aisles.csv
+│           ├── departments.csv
+│           ├── order_products__prior.csv
+│           ├── order_products__train.csv
+│           └── products.csv
 ├── bronze/ <- created by Synapse Spark (Parquet)
 ├── silver/ <- curated fact/dim tables
 └── gold/ <- ML features + predictions
-
+```
+---
 - **raw/** → Original CSVs (as downloaded).  
 - **bronze/** → Standardized Parquet with metadata (`ingest_ts`, `ingest_date`).  
 - **silver/** → Clean curated tables (dim_products, dim_orders, fact_order_products).  
